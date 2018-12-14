@@ -1,0 +1,54 @@
+<html>
+<head>
+    <title>Firebase Login</title>
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"/>
+    <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBjsf9HIfnnExyGWREhUayKQqkGOH7lByo",
+            authDomain: "find-job-abc60.firebaseapp.com",
+            databaseURL: "https://find-job-abc60.firebaseio.com",
+            projectId: "find-job-abc60",
+            storageBucket: "find-job-abc60.appspot.com",
+            messagingSenderId: "261244592840"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <script src="index.js"></script>
+</head>
+<body>
+
+<div id="login_div" class="main-div">
+    <h3>Login</h3>
+    <input type="email" id="login_email_field" placeholder="type your email"/>
+    <input type="password" id="login_password_field" placeholder="type your password"/>
+
+    <button onclick="loginFromFirebase()">Login to Account</button>
+    <button onclick="goSignUp()">Go to Sign-up</button>
+</div>
+
+<div id="sign_up_div" class="sign-up-div">
+    <h3>Signup</h3>
+    <form autocomplete="on">
+        <input name="fname" id="sign_up_fname" placeholder="type your first name"/>
+        <input name="lname" id="sign_up_lname" placeholder="type your last name"/>
+        <input name="email" type="email" id="sign_up_email_field" placeholder="type your email"/>
+        <input type="password" id="sign_up_password_field" placeholder="type your password" minlength="6" required/>
+    </form>
+
+    <button onclick="signupFromFirebase()">Sign-up</button>
+    <button onclick="goLogin()">Login to Account</button>
+</div>
+
+
+<div id="user_div" class="loggedin-div">
+    <h3>Welcome User</h3>
+    <p id="user_para">Welcome to Firebase web login Example. You're currently logged in.</p>
+    <button onclick="logoutFromFirebase()">Logout</button>
+</div>
+
+
+</body>
+</html>
